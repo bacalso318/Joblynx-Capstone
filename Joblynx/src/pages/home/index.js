@@ -15,12 +15,12 @@ const Home = () => {
     <Grid container spacing={6}>
       <Grid item xs={12}>
         <Card>
-          <CardHeader title='Kick start your project 🚀'></CardHeader>
+          <CardHeader title='JobLynx'></CardHeader>
           <CardContent>
             <Typography sx={{ mb: 2 }}>All the best for your new project.</Typography>
             <Typography>
-              Please make sure to read our Template Documentation to understand where to go from here and how to use our
-              template.
+              Simplify Your Hiring Process with Joblynx 
+              We’re a creative company that focuses on establishing long-term relationships with customers.
             </Typography>
           </CardContent>
         </Card>
