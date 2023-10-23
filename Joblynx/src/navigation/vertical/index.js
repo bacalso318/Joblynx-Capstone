@@ -35,11 +35,7 @@ const navigation = () => {
       ]
     },
     {
-      path: '/Users',
-      action: 'read',
-      subject: 'users-page',
-      title: 'Users',
-      icon: 'mdi:person-outline'
+      sectionTitle: 'User Job'
     },
     {
       path: '/Resume',
@@ -64,6 +60,13 @@ const navigation = () => {
       subject: 'about-page',
       title: 'About Us',
       icon: 'mdi:about-outline'
+    },
+    {
+      path: '/Contact Us',
+      action: 'read',
+      subject: 'Contact-page',
+      title: 'Contact Us',
+      icon: 'mdi:phone-outline'
     },
     
   ]

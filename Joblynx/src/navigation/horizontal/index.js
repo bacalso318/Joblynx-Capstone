@@ -32,7 +32,45 @@ const navigation = () => [
         path: '/job/Companies'
       }
     ]
-  }
+  },
+  {
+    path: '/User',
+    action: 'read',
+    subject: 'User-page',
+    title: 'User',
+    icon: 'mdi:person-outline',
+    children: [
+      {
+        title: 'Add Resume',
+        path: '/User/AddResume'
+      },
+      {
+        title: 'Application Tracker',
+        path: '/User/Apptrack'
+      }
+      
+    ]
+  },
+    {
+      sectionTitle: 'Misc'
+    },
+    {
+      path: '/about',
+      action: 'read',
+      subject: 'about-page',
+      title: 'About Us',
+      icon: 'mdi:about-outline'
+    },
+    {
+      path: '/Contact Us',
+      action: 'read',
+      subject: 'Contact-page',
+      title: 'Contact Us',
+      icon: 'mdi:phone-outline'
+    },
+    
+
+  
 ]
 
 export default navigation
