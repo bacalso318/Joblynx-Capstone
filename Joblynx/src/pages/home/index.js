@@ -19,8 +19,8 @@ const Home = () => {
           <CardContent>
             <Typography sx={{ mb: 2 }}>All the best for your new project.</Typography>
             <Typography>
-              Please make sure to read our Template Documentation to understand where to go from here and how to use our
-              template.
+              Simplify Your Hiring Process with Joblynx 
+              We’re a creative company that focuses on establishing long-term relationships with customers.
             </Typography>
           </CardContent>
         </Card>
