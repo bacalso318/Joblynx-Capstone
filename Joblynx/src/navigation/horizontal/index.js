@@ -1,5 +1,6 @@
-const navigation = () => [
-  {
+const navigation = () => {
+  return [
+    {
     title: 'Home',
     path: '/home',
     icon: 'mdi:home-outline'
@@ -25,11 +26,11 @@ const navigation = () => [
     children: [
       {
         title: 'Find a Job',
-        path: '/job/Find a Job'
+        path: '/job/find_job'
       },
       {
         title: 'Companies',
-        path: '/job/Companies'
+        path: '/job/companies'
       }
     ]
   },
@@ -68,9 +69,10 @@ const navigation = () => [
       title: 'Contact Us',
       icon: 'mdi:phone-outline'
     },
+  ]
     
 
   
-]
+}
 
 export default navigation

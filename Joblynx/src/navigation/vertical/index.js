@@ -25,13 +25,13 @@ const navigation = () => {
       icon: 'mdi:work-outline',
       children: [
         {
-          title: 'Companies',
-          path: '/Jobs/Companies'
+          title: 'Find a Jobs',
+          path: '/job/findjob'
         },
         {
-          title: 'Find a Jobs',
-          path: '/Jobs'
-        }
+          title: 'Companies',
+          path: '/job/companies'
+        },
       ]
     },
     {
