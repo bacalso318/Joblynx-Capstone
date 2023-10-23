@@ -6,6 +6,7 @@ import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
 import Customizer from 'src/@core/components/customizer'
 import { useToaster } from 'react-hot-toast'
+import { Button } from '@mui/material'
 
 const Home = () => {
 
@@ -15,13 +16,20 @@ const Home = () => {
     <Grid container spacing={6}>
       <Grid item xs={12}>
         <Card>
-          <CardHeader title='JobLynx'></CardHeader>
-          <CardContent>
-            <Typography sx={{ mb: 2 }}>All the best for your new project.</Typography>
-            <Typography>
-              Simplify Your Hiring Process with Joblynx 
-              We’re a creative company that focuses on establishing long-term relationships with customers.
-            </Typography>
+          <CardContent sx={{
+            backgroundColor:'primary.main'
+          }}>
+            <Typography sx={{
+              mb:1,
+              fontSize:'48px',
+              fontWeight:'bold',
+              color:'black',
+            }}>JobLynx</Typography>
+            <Typography sx={{ mb: 2,display:'inline', fontSize:'25px', color:'white'}}>Simplify Your Hiring Process with </Typography>
+            <Typography sx={{display:'inline', fontSize:'25px', color:'black', fontWeight:'bold' }}>JobLynx</Typography>
+            <Button sx={{width:'140px',left:'12cm',display:'inline',backgroundColor:'blue',fontWeight:'bold'}} variant='contained' >Apply Now</Button>
+            <Button sx={{width:'140px',left:'12.5cm', backgroundColor:'#d4d3d2', fontWeight:'bold'}} variant='Outlined'>Contact</Button>
+            <Typography sx={{color:'graywhite', fontSize:'15px'}}>Connect with Qualifed Candidates and Save Time</Typography>
           </CardContent>
         </Card>
       </Grid>
