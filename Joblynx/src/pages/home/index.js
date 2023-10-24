@@ -33,7 +33,7 @@ const Home = () => {
                 <Typography sx={{ mb: 2,display:'inline', fontSize:'25px', color:'white'}}>Simplify Your Hiring Process with </Typography>
                 <Typography sx={{display:'inline', fontSize:'25px', color:'black', fontWeight:'bold' }}>JobLynx</Typography>
                 <Typography sx={{mb:10,color:'graywhite', fontSize:'15px'}}>Connect with Qualifed Candidates and Save Time</Typography>
-                <Button sx={{height:'50px',width:'160px',backgroundColor:'blue',fontWeight:'bold'}} variant='contained' >Find A Job</Button>
+                <Button sx={{height:'50px',width:'160px',backgroundColor:'blue',fontWeight:'bold', ":hover":{backgroundColor:'error.main'}}} variant='contained' >Find A Job</Button>
               </CardContent>
             </Card>
           </Grid>
