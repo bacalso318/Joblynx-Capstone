@@ -6,7 +6,7 @@
  */
 const themeConfig = {
   // ** Layout Configs
-  templateName: 'JobLynx' /* App Name */,
+  templateName: 'Starboard Manpower Services INC.' /* App Name */,
   layout: 'vertical' /* vertical | horizontal */,
   mode: 'semi-dark' /* light | dark | semi-dark /*! Note: semi-dark value will only work for Vertical Layout */,
   direction: 'ltr' /* ltr | rtl */,
