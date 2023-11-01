@@ -31,14 +31,14 @@ const navigation = () => {
         {
           title: 'Companies',
           path: '/job/companies'
-        },
+        }
       ]
     },
     {
       sectionTitle: 'User Job'
     },
     {
-      path: '/Resume',
+      path: '/resume',
       action: 'read',
       subject: 'resume-page',
       title: 'Add Resume',
@@ -62,13 +62,12 @@ const navigation = () => {
       icon: 'mdi:about-outline'
     },
     {
-      path: '/Contact Us',
+      path: '/contact-us',
       action: 'read',
       subject: 'Contact-page',
       title: 'Contact Us',
       icon: 'mdi:phone-outline'
-    },
-    
+    }
   ]
 }
 
