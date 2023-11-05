@@ -63,6 +63,7 @@ const Home = () => {
           </Grid>
         </Grid>
 
+        {/* Second Content */}
         <Grid>
           <Grid item xs={12} sx={{ position: 'relative', marginTop: '-1rem', zIndex: '1' }}>
             <Card sx={{ borderRadius: '0' }}>
@@ -71,7 +72,6 @@ const Home = () => {
                   backgroundColor: 'white',
                   display: 'flex',
                   flexDirection: 'column',
-                  alignItems: 'left',
                   padding: '2rem',
                   height: '35rem', // Increase the height as needed
                   alignItems: 'center'
@@ -86,9 +86,119 @@ const Home = () => {
                     marginTop: '3rem'
                   }}
                 >
-                  Find, Apply, Job-Ready
+                  Find Your Dream Job
                 </Typography>
-                <Typography sx={{ mb: 6 }}>Discover jobs on different job posting companies.</Typography>
+
+                <Typography sx={{ mb: 5 }}>Discover a wide range of job opportunities and apply with ease.</Typography>
+                <Grid container spacing={2} margin={6}>
+                  <Grid item xs={12}>
+                    <CardContent
+                      sx={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        height: '15rem',
+                        textAlign: 'center'
+                      }}
+                    >
+                      <Card>
+                        <CardContent
+                          sx={{
+                            alignItems: 'center',
+                            height: '15rem'
+                          }}
+                        >
+                          <Typography
+                            variant='h6'
+                            sx={{
+                              color: 'var(--main-color)',
+                              fontSize: 'var(--font-size-xl)',
+                              mb: 5,
+                              fontWeight: 'semi-bold'
+                            }}
+                          >
+                            24/7 Support
+                          </Typography>
+                          <Typography variant='body1' sx={{ width: '218px', height: '88px', fontSize: '15px', mb: 5 }}>
+                            Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus
+                            cras justo.
+                          </Typography>
+                        </CardContent>
+                      </Card>
+                      <Card>
+                        <CardContent
+                          sx={{
+                            alignItems: 'center',
+                            height: '15rem'
+                          }}
+                        >
+                          <Typography
+                            variant='h6'
+                            sx={{
+                              color: 'var(--main-color)',
+                              fontSize: 'var(--font-size-xl)',
+                              mb: 5,
+                              fontWeight: 'semi-bold'
+                            }}
+                          >
+                            Security
+                          </Typography>
+                          <Typography variant='body1' sx={{ width: '218px', height: '88px', fontSize: '15px' }}>
+                            Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus
+                            cras justo.
+                          </Typography>
+                        </CardContent>
+                      </Card>
+                      <Card>
+                        <CardContent
+                          sx={{
+                            alignItems: 'center',
+                            height: '15rem'
+                          }}
+                        >
+                          <Typography
+                            variant='h6'
+                            sx={{
+                              color: 'var(--main-color)',
+                              fontSize: 'var(--font-size-xl)',
+                              mb: 5,
+                              fontWeight: 'semi-bold'
+                            }}
+                          >
+                            Daily Updates
+                          </Typography>
+                          <Typography variant='body1' sx={{ width: '218px', height: '88px', fontSize: '15px' }}>
+                            Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus
+                            cras justo.
+                          </Typography>
+                        </CardContent>
+                      </Card>
+                      <Card>
+                        <CardContent
+                          sx={{
+                            alignItems: 'center',
+                            height: '15rem'
+                          }}
+                        >
+                          <Typography
+                            variant='h6'
+                            sx={{
+                              color: 'var(--main-color)',
+                              fontSize: 'var(--font-size-xl)',
+                              mb: 5,
+                              fontWeight: 'semi-bold'
+                            }}
+                          >
+                            Job Research
+                          </Typography>
+                          <Typography variant='body1' sx={{ width: '218px', height: '88px', fontSize: '15px' }}>
+                            Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus
+                            cras justo.
+                          </Typography>
+                        </CardContent>
+                      </Card>
+                    </CardContent>
+                  </Grid>
+                </Grid>
               </CardContent>
             </Card>
           </Grid>
