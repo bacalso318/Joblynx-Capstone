@@ -1,5 +1,6 @@
 import React from 'react'
 import { Grid, Typography, Card, CardContent, Container, Paper, AppBar, Toolbar, Button } from '@mui/material'
+import Link from 'next/link'
 
 const Home = () => {
   return (

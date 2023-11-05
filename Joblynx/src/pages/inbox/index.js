@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography'
 import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
 
-const SecondPage = () => {
+const Inbox = () => {
   return (
     <Grid container spacing={6}>
       <Grid item xs={12}>
@@ -24,4 +24,4 @@ const SecondPage = () => {
   )
 }
 
-export default SecondPage
+export default Inbox

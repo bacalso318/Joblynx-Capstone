@@ -6,8 +6,8 @@ const navigation = () => {
       icon: 'mdi:home-outline'
     },
     {
-      title: 'Second Page',
-      path: '/second-page',
+      title: 'Inbox',
+      path: '/inbox',
       icon: 'mdi:email-outline'
     },
     {

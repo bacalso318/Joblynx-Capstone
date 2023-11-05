@@ -6,8 +6,8 @@ import {
   Card,
   CardHeader,
   CardContent,
-  AppBar,
-  Toolbar,
+  FormGroup,
+  Slider,
   Container,
   Box,
   Paper,
@@ -20,6 +20,7 @@ import {
   FormControlLabel
 } from '@mui/material'
 import FindJobContent from 'src/views/pages/job/find_job/FindJobContent'
+import { right } from '@popperjs/core'
 
 const FindJob = () => {
   const [jobType, setJobType] = useState('')
@@ -34,11 +35,21 @@ const FindJob = () => {
   const [jobListings, setJobListings] = useState([
     // Your job listings data goes here
   ])
+  const [selectedCheckbox, setSelectedCheckbox] = useState('')
 
   // Handle search and filter changes
   const handleSearch = () => {
     // Implement your search and filter logic here
     // Update jobListings based on search criteria
+  }
+  const handleCheckboxChange = (event, checkboxName) => {
+    if (selectedCheckbox === checkboxName) {
+      // If the same checkbox is clicked again, deselect it
+      setSelectedCheckbox('')
+    } else {
+      // Otherwise, select the new checkbox and deselect the previously selected one
+      setSelectedCheckbox(checkboxName)
+    }
   }
 
   return (
@@ -53,12 +64,9 @@ const FindJob = () => {
           {/* Find a Job Section */}
           <Grid item xs={12}>
             <Box mt={3}>
-              <Typography variant='h4' sx={{ mb: 2 }}>
-                Find a Job
-              </Typography>
               <Paper elevation={3}>
                 <CardContent>
-                  <Grid container spacing={2}>
+                  <Grid container spacing={2} mb={2}>
                     <Grid item xs={12} sm={6} md={4}>
                       <TextField
                         label='Job Type'
@@ -92,41 +100,98 @@ const FindJob = () => {
                       </FormControl>
                     </Grid>
                   </Grid>
-                  <Grid container spacing={2}>
-                    <Grid item xs={12} sm={6} md={4}>
+
+                  <Grid item xs={12} sm={6} md={2} display={'inline-flex'}>
+                    <FormGroup sx={{}}>
                       <FormControlLabel
-                        control={<Checkbox checked={fullTime} onChange={e => setFullTime(e.target.checked)} />}
+                        control={
+                          <Checkbox
+                            checked={selectedCheckbox === 'fullTime'}
+                            onChange={event => handleCheckboxChange(event, 'fullTime')}
+                          />
+                        }
                         label='Full Time'
                       />
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={4}>
+                    </FormGroup>
+                  </Grid>
+                  <Grid item xs={12} sm={6} md={2} display={'inline-flex'}>
+                    <FormGroup sx={{}}>
                       <FormControlLabel
-                        control={<Checkbox checked={partTime} onChange={e => setPartTime(e.target.checked)} />}
+                        control={
+                          <Checkbox
+                            checked={selectedCheckbox === 'partTime'}
+                            onChange={event => handleCheckboxChange(event, 'partTime')}
+                          />
+                        }
                         label='Part Time'
                       />
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={4}>
+                    </FormGroup>
+                  </Grid>
+                  <Grid item xs={12} sm={6} md={2} display={'inline-flex'}>
+                    <FormGroup sx={{}}>
                       <FormControlLabel
-                        control={<Checkbox checked={internship} onChange={e => setInternship(e.target.checked)} />}
+                        control={
+                          <Checkbox
+                            checked={selectedCheckbox === 'internship'}
+                            onChange={event => handleCheckboxChange(event, 'internship')}
+                          />
+                        }
                         label='Internship'
                       />
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={4}>
+                    </FormGroup>
+                  </Grid>
+                  <Grid item xs={12} sm={6} md={2} display={'inline-flex'}>
+                    <FormGroup sx={{}}>
                       <FormControlLabel
-                        control={<Checkbox checked={remote} onChange={e => setRemote(e.target.checked)} />}
+                        control={
+                          <Checkbox
+                            checked={selectedCheckbox === 'remote'}
+                            onChange={event => handleCheckboxChange(event, 'remote')}
+                          />
+                        }
                         label='Remote'
                       />
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={4}>
+                    </FormGroup>
+                  </Grid>
+                  <Grid item xs={12} sm={6} md={2} display={'inline-flex'}>
+                    <FormGroup sx={{}}>
                       <FormControlLabel
-                        control={<Checkbox checked={contract} onChange={e => setContract(e.target.checked)} />}
+                        control={
+                          <Checkbox
+                            checked={selectedCheckbox === 'contract'}
+                            onChange={event => handleCheckboxChange(event, 'contract')}
+                          />
+                        }
                         label='Contract'
                       />
-                    </Grid>
+                    </FormGroup>
                   </Grid>
-                  <Button variant='contained' color='primary' onClick={handleSearch}>
-                    Search
-                  </Button>
+
+                  <Grid item xs={12} sm={6} md={10} sx={{ width: '200px' }}>
+                    <Typography>Salary</Typography>
+                    <Slider
+                      value={salary}
+                      onChange={(_, newValue) => setSalary(newValue)}
+                      valueLabelDisplay='auto'
+                      valueLabelFormat={value => `$${value}`}
+                      min={100}
+                      max={5000}
+                      step={100}
+                      sx={{ width: '20rem' }}
+                    />
+                  </Grid>
+                  <Grid item xs={12} sm={6} md={4}>
+                    <Button
+                      variant='contained'
+                      color='primary'
+                      onClick={handleSearch}
+                      sx={{
+                        display: 'inline-flex'
+                      }}
+                    >
+                      Search
+                    </Button>
+                  </Grid>
                 </CardContent>
               </Paper>
             </Box>
