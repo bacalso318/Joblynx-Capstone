@@ -113,7 +113,6 @@ const FormValidationBasic = () => {
                       error={Boolean(errors.Age)}
                       aria-describedby='validation-basic-age'
                     />
-                    
                   )}
                 />
                 {errors.Age && (
@@ -123,7 +122,6 @@ const FormValidationBasic = () => {
                 )}
               </FormControl>
             </Grid>
-            
 
             <Grid item xs={12} sm={6}>
               <FormControl fullWidth>
@@ -149,7 +147,6 @@ const FormValidationBasic = () => {
                 )}
               </FormControl>
             </Grid>
-
 
             <Grid item xs={12} sm={6}>
               <Controller
@@ -204,7 +201,6 @@ const FormValidationBasic = () => {
                       labelId='validation-basic-select'
                       aria-describedby='validation-basic-select'
                     >
-                      
                       <MenuItem value='Philippines'>Philippines</MenuItem>
                       <MenuItem value='UK'>UK</MenuItem>
                       <MenuItem value='USA'>USA</MenuItem>
@@ -284,10 +280,14 @@ const FormValidationBasic = () => {
               </FormControl>
             </Grid>
 
-            
             <Grid item xs={12}>
-              <Button size='large' type='submit' variant='contained'>
-                Submit
+              <Button
+                size='large'
+                type='submit'
+                variant='contained'
+                sx={{ left: '82em', bottom: '4.5em', width: '8em' }}
+              >
+                Next
               </Button>
             </Grid>
           </Grid>

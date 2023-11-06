@@ -20,7 +20,7 @@ const FormValidation = () => {
           title={
             <Typography variant='h5'>
               <Link href='https://github.com/react-hook-form/react-hook-form' target='_blank'>
-               Resume Form
+                Resume Form
               </Link>
             </Typography>
           }
