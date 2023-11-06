@@ -1,27 +1,36 @@
 // ** MUI Imports
-import Card from '@mui/material/Card'
 import Grid from '@mui/material/Grid'
+import Link from '@mui/material/Link'
 import Typography from '@mui/material/Typography'
-import CardHeader from '@mui/material/CardHeader'
-import CardContent from '@mui/material/CardContent'
 
-const Resume = () => {
+// ** Custom Components Imports
+import PageHeader from 'src/@core/components/page-header'
+
+// ** Demo Components Imports
+import FormValidationBasic from 'src/views/pages/resume/FormValidationBasic'
+
+// ** Styled Component
+import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
+
+const FormValidation = () => {
   return (
-    <Grid container spacing={6}>
-      <Grid item xs={12}>
-        <Card>
-          <CardHeader title='Create Awesome 🙌'></CardHeader>
-          <CardContent>
-            <Typography sx={{ mb: 2 }}>This is your second page.</Typography>
-            <Typography>
-              Chocolate sesame snaps pie carrot cake pastry pie lollipop muffin. Carrot cake dragée chupa chups jujubes.
-              Macaroon liquorice cookie wafer tart marzipan bonbon. Gingerbread jelly-o dragée chocolate.
+    <DatePickerWrapper>
+      <Grid container spacing={6} className='match-height'>
+        <PageHeader
+          title={
+            <Typography variant='h5'>
+              <Link href='https://github.com/react-hook-form/react-hook-form' target='_blank'>
+               Resume Form
+              </Link>
             </Typography>
-          </CardContent>
-        </Card>
+          }
+        />
+        <Grid item xs={12}>
+          <FormValidationBasic />
+        </Grid>
       </Grid>
-    </Grid>
+    </DatePickerWrapper>
   )
 }
 
-export default Resume
+export default FormValidation

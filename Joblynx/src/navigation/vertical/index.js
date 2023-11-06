@@ -45,7 +45,7 @@ const navigation = () => {
       icon: 'mdi:paper-outline'
     },
     {
-      path: '/apptrack',
+      path: '/app-tracker',
       action: 'read',
       subject: 'apptrack-page',
       title: 'Application Tracker',
