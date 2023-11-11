@@ -55,7 +55,7 @@ const ProfileAcc = () => {
   return (
     <Grid container spacing={6}>
       <Grid item xs={12}>
-        <Card sx={{ borderRadius: '0', width: '84em', marginLeft: '20px', display: 'inline' }}>
+        <Card sx={{ borderRadius: '0', width: '84em', marginLeft: '0px', display: 'inline' }}>
           <form>
             <CardContent sx={{ pt: 0 }}>
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
@@ -63,7 +63,7 @@ const ProfileAcc = () => {
                 <div>
                   <Typography sx={{ mt: 5, color: 'text.disabled' }}>Allowed PNG or JPEG. Max size of 800K.</Typography>
                   <ButtonStyled component='label' variant='contained' htmlFor='account-settings-upload-image'>
-                    Upload New Photo
+                    Upload Photo
                     <input
                       hidden
                       type='file'

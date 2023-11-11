@@ -84,6 +84,7 @@ const StepperAlternativeLabel = () => {
   const [nationality, setNationality] = useState('')
   const [education, setEducation] = useState('')
   const [skills, setSkills] = useState('')
+  const [profile, setProfile] = useState('')
 
   // Handle Stepper
   const handleBack = () => {
@@ -115,6 +116,7 @@ const StepperAlternativeLabel = () => {
     setNationality('')
     setEducation('')
     setSkills('')
+    setProfile('')
   }
 
   const getStepContent = step => {
@@ -122,10 +124,15 @@ const StepperAlternativeLabel = () => {
       case 0:
         return (
           <Fragment key={step}>
-            <Grid>
-              <ProfileAcc />
+            <Grid item xs={12}> 
+            
+              <ProfileAcc
+              fullWidth
+              value={profile}
+              onChange={e => setProfile(e.target.value)} 
+              />
             </Grid>
-            <Grid item xs={12} sm={3.85} sx={{ marginTop: '4em' }}>
+            <Grid item xs={12} sm={5} sx={{ marginTop: 'em'}}>
               <TextField
                 fullWidth
                 label='First Name'
@@ -134,7 +141,7 @@ const StepperAlternativeLabel = () => {
                 onChange={e => setFirstName(e.target.value)}
               />
             </Grid>
-            <Grid item xs={12} sm={3.7} sx={{ marginTop: '4em' }}>
+            <Grid item xs={12} sm={5} sx={{ marginTop: 'em', marginRight: 'em' }}>
               <TextField
                 fullWidth
                 label='Last Name'
@@ -144,11 +151,11 @@ const StepperAlternativeLabel = () => {
               />
             </Grid>
 
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={5}>
               <TextField fullWidth label='Address' value={address} onChange={e => setAddress(e.target.value)} />
             </Grid>
 
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={5}>
               <TextField
                 fullWidth
                 label='City'
@@ -158,7 +165,7 @@ const StepperAlternativeLabel = () => {
               />
             </Grid>
 
-            <Grid item xs={12} sm={2}>
+            <Grid item xs={12} sm={2.5}>
               <TextField
                 fullWidth
                 label='Postal Code'
@@ -167,7 +174,7 @@ const StepperAlternativeLabel = () => {
                 onChange={e => setPostal(e.target.value)}
               />
             </Grid>
-            <Grid item xs={12} sm={2}>
+            <Grid item xs={12} sm={2.5}>
               <TextField
                 fullWidth
                 label='Nationality'
@@ -177,19 +184,7 @@ const StepperAlternativeLabel = () => {
               />
             </Grid>
 
-            <Grid item xs={12} sm={2}>
-              <DatePicker
-                selected={date}
-                showYearDropdown
-                showMonthDropdown
-                id='form-layouts-tabs-date'
-                placeholderText='MM-DD-YYYY'
-                customInput={<CustomInput />}
-                onChange={date => setDate(date)}
-              />
-            </Grid>
-
-            <Grid item xs={12} sm={3}>
+            <Grid item xs={12} sm={2.5}>
               <FormControl fullWidth>
                 <InputLabel id='stepper-alternative-personal-select-label'>Country</InputLabel>
                 <Select
@@ -207,13 +202,35 @@ const StepperAlternativeLabel = () => {
                 </Select>
               </FormControl>
             </Grid>
-            <Grid item xs={8} sm={3}>
+
+            <Grid item xs={12} sm={2.5}>
+              <DatePicker
+                selected={date}
+                showYearDropdown
+                showMonthDropdown
+                id='form-layouts-tabs-date'
+                placeholderText='MM-DD-YYYY'
+                customInput={<CustomInput />}
+                onChange={date => setDate(date)}
+              />
+            </Grid>
+            <Grid item xs={8} sm={5}>
               <TextField
                 fullWidth
                 label='Phone Number'
                 placeholder='+63'
                 value={phone}
                 onChange={e => setPhoneNumber(e.target.value)}
+              />
+            </Grid>
+
+            <Grid item xs={8} sm={5}>
+              <TextField
+                fullWidth
+                label='Email'
+                placeholder='abc123@gmail.com'
+                value={email}
+                onChange={e => setEmail(e.target.value)}
               />
             </Grid>
           </Fragment>
