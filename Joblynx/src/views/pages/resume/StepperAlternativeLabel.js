@@ -121,7 +121,7 @@ const StepperAlternativeLabel = () => {
         return (
          
            <Fragment key={step}>
-           <Grid item xs={12} sm={6}>
+           <Grid item xs={12} sm={3}>
              <TextField
                fullWidth
                label='First Name'
@@ -130,7 +130,7 @@ const StepperAlternativeLabel = () => {
                onChange={e => setFirstName(e.target.value)}
              />
            </Grid>
-           <Grid item xs={12} sm={6}>
+           <Grid item xs={12} sm={3}>
              <TextField
                fullWidth
                label='Last Name'
@@ -141,6 +141,15 @@ const StepperAlternativeLabel = () => {
            </Grid>
            
            <Grid item xs={12} sm={6}>
+           <TextField
+               fullWidth
+               label='Address'
+               value={address}
+               onChange={e => setAddress(e.target.value)}
+             />
+           </Grid>
+
+           <Grid item xs={12} sm={6}>
              <TextField
                fullWidth
                label='City'
@@ -150,15 +159,8 @@ const StepperAlternativeLabel = () => {
              />
            </Grid>
 
-           <Grid item xs={12} sm={6}>
-           <TextField
-               fullWidth
-               label='Address'
-               value={address}
-               onChange={e => setAddress(e.target.value)}
-             />
-           </Grid>
-           <Grid item xs={12} sm={6}>
+           
+           <Grid item xs={12} sm={2}>
            <TextField
                fullWidth
                label='Postal Code'
@@ -167,7 +169,7 @@ const StepperAlternativeLabel = () => {
                onChange={e => setPostal(e.target.value)}
              />
            </Grid>
-           <Grid item xs={12} sm={6}>
+           <Grid item xs={12} sm={2}>
            <TextField
                fullWidth
                label='Nationality'
@@ -177,7 +179,7 @@ const StepperAlternativeLabel = () => {
              />
            </Grid>
 
-           <Grid item xs={12} sm={6}>
+           <Grid item xs={12} sm={2}>
                   <DatePicker
                     selected={date}
                     showYearDropdown
@@ -188,17 +190,9 @@ const StepperAlternativeLabel = () => {
                     onChange={date => setDate(date)}
                   />
                 </Grid>
-           <Grid item xs={12} sm={6}>
-             <TextField
-               fullWidth
-               label='Phone Number'
-               placeholder='+63'
-               value={phone}
-               onChange={e => setPhoneNumber(e.target.value)}
-             />
-             </Grid>
-           
-           <Grid item xs={12} sm={6}>
+
+                
+           <Grid item xs={12} sm={3}>
              <FormControl fullWidth>
                <InputLabel id='stepper-alternative-personal-select-label'>Country</InputLabel>
                <Select
@@ -216,6 +210,16 @@ const StepperAlternativeLabel = () => {
                </Select>
              </FormControl>
            </Grid>
+           <Grid item xs={12} sm={3}>
+             <TextField
+               fullWidth
+               label='Phone Number'
+               placeholder='+63'
+               value={phone}
+               onChange={e => setPhoneNumber(e.target.value)}
+             />
+             </Grid>
+           
 
          </Fragment>
         )
@@ -242,7 +246,7 @@ const StepperAlternativeLabel = () => {
             />
           </Grid>
 
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={12} sm={2}>
                   <DatePicker
                     selected={date}
                     showYearDropdown
