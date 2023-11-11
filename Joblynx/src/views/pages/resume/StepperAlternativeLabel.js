@@ -29,6 +29,7 @@ import Icon from 'src/@core/components/icon'
 
 // ** Custom Components Imports
 import StepperCustomDot from './StepperCustomDot'
+import ProfileAcc from './ProfileAcc'
 
 // ** Third Party Imports
 import toast from 'react-hot-toast'
@@ -121,7 +122,10 @@ const StepperAlternativeLabel = () => {
       case 0:
         return (
           <Fragment key={step}>
-            <Grid item xs={12} sm={3}>
+            <Grid>
+              <ProfileAcc />
+            </Grid>
+            <Grid item xs={12} sm={3.85} sx={{ marginTop: '4em' }}>
               <TextField
                 fullWidth
                 label='First Name'
@@ -130,7 +134,7 @@ const StepperAlternativeLabel = () => {
                 onChange={e => setFirstName(e.target.value)}
               />
             </Grid>
-            <Grid item xs={12} sm={3}>
+            <Grid item xs={12} sm={3.7} sx={{ marginTop: '4em' }}>
               <TextField
                 fullWidth
                 label='Last Name'
@@ -203,9 +207,9 @@ const StepperAlternativeLabel = () => {
                 </Select>
               </FormControl>
             </Grid>
-            <Grid item xs={12} sm={3}>
+            <Grid item xs={8} sm={3}>
               <TextField
-                fullWidthz
+                fullWidth
                 label='Phone Number'
                 placeholder='+63'
                 value={phone}
@@ -278,7 +282,7 @@ const StepperAlternativeLabel = () => {
                 label='Skills'
                 placeholder=''
                 value={skills}
-                onChange={e => setEducation(e.target.value)}
+                onChange={e => setSkills(e.target.value)}
               />
             </Grid>
           </Fragment>
@@ -394,7 +398,7 @@ const StepperAlternativeLabel = () => {
           })}
         </Stepper>
       </StepperWrapper>
-      <Card sx={{ mt: 4 }}>
+      <Card sx={{ mt: 5 }}>
         <CardContent>{renderContent()}</CardContent>
       </Card>
     </Fragment>

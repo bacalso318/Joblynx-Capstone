@@ -6,12 +6,13 @@ import Typography from '@mui/material/Typography'
 import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
 
 // ** Demo Components Imports
+
 import StepperAlternativeLabel from 'src/views/pages/resume/StepperAlternativeLabel'
+import ProfileAcc from 'src/views/pages/resume/ProfileAcc'
 
 const FormWizard = () => {
   return (
     <Grid container spacing={6}>
-      
       <Grid item xs={12} sx={{ pt: theme => `${theme.spacing(8)} !important` }}>
         <Typography variant='h6'>Create Your Resume</Typography>
       </Grid>
