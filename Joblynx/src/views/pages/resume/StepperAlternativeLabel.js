@@ -39,6 +39,7 @@ import StepperWrapper from 'src/@core/styles/mui/stepper'
 
 // ** Third Party Imports
 import DatePicker from 'react-datepicker'
+import SelectControlledUncontrolled from './Gender'
 
 const CustomInput = forwardRef((props, ref) => {
   return <TextField fullWidth {...props} inputRef={ref} label='Birth Date' autoComplete='off' />
@@ -154,6 +155,7 @@ const StepperAlternativeLabel = () => {
             <Grid item xs={12} sm={5}>
               <TextField fullWidth label='Address' value={address} onChange={e => setAddress(e.target.value)} />
             </Grid>
+            
 
             <Grid item xs={12} sm={5}>
               <TextField
@@ -233,6 +235,11 @@ const StepperAlternativeLabel = () => {
                 onChange={e => setEmail(e.target.value)}
               />
             </Grid>
+ 
+            <Grid item xs={12} sm={4} sx={{ marginBottom: '0.5em'}}> 
+              <SelectControlledUncontrolled
+              />
+              </Grid>
           </Fragment>
         )
       case 1:
