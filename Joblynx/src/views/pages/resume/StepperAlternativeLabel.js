@@ -30,6 +30,7 @@ import Icon from 'src/@core/components/icon'
 // ** Custom Components Imports
 import StepperCustomDot from './StepperCustomDot'
 import ProfileAcc from './ProfileAcc'
+import ChipSelector from './ChipSelector'
 
 // ** Third Party Imports
 import toast from 'react-hot-toast'
@@ -84,8 +85,9 @@ const StepperAlternativeLabel = () => {
   const [activeStep, setActiveStep] = useState(0)
   const [nationality, setNationality] = useState('')
   const [education, setEducation] = useState('')
-  const [skills, setSkills] = useState('')
   const [profile, setProfile] = useState('')
+  const [chips, setChips] = useState([])
+  const [info, setInfo] = useState('')
 
   // Handle Stepper
   const handleBack = () => {
@@ -116,8 +118,9 @@ const StepperAlternativeLabel = () => {
     setAddress('')
     setNationality('')
     setEducation('')
-    setSkills('')
     setProfile('')
+    setChips([])
+    setInfo('')
   }
 
   const getStepContent = step => {
@@ -125,15 +128,10 @@ const StepperAlternativeLabel = () => {
       case 0:
         return (
           <Fragment key={step}>
-            <Grid item xs={12}> 
-            
-              <ProfileAcc
-              fullWidth
-              value={profile}
-              onChange={e => setProfile(e.target.value)} 
-              />
+            <Grid item xs={12}>
+              <ProfileAcc fullWidth value={profile} onChange={e => setProfile(e.target.value)} />
             </Grid>
-            <Grid item xs={12} sm={5} sx={{ marginTop: 'em'}}>
+            <Grid item xs={12} sm={5} sx={{ marginTop: 'em' }}>
               <TextField
                 fullWidth
                 label='First Name'
@@ -155,7 +153,6 @@ const StepperAlternativeLabel = () => {
             <Grid item xs={12} sm={5}>
               <TextField fullWidth label='Address' value={address} onChange={e => setAddress(e.target.value)} />
             </Grid>
-            
 
             <Grid item xs={12} sm={5}>
               <TextField
@@ -235,11 +232,10 @@ const StepperAlternativeLabel = () => {
                 onChange={e => setEmail(e.target.value)}
               />
             </Grid>
- 
-            <Grid item xs={12} sm={4} sx={{ marginBottom: '0.5em'}}> 
-              <SelectControlledUncontrolled
-              />
-              </Grid>
+
+            <Grid item xs={12} sm={4} sx={{ marginBottom: '0.5em' }}>
+              <SelectControlledUncontrolled />
+            </Grid>
           </Fragment>
         )
       case 1:
@@ -301,12 +297,20 @@ const StepperAlternativeLabel = () => {
               />
             </Grid>
             <Grid item xs={12} sm={6}>
+              <Grid item xs={12} sm={6}>
+                {/* Pass chips and setChips as props to ChipSelector */}
+                <ChipSelector chips={chips} setChips={setChips} />
+              </Grid>
+            </Grid>
+            <Grid item xs={12} sm={6}>
               <TextField
                 fullWidth
-                label='Skills'
+                rows={3}
+                multiline
+                label='Additional Information'
                 placeholder=''
-                value={skills}
-                onChange={e => setSkills(e.target.value)}
+                value={info}
+                onChange={e => setInfo(e.target.value)}
               />
             </Grid>
           </Fragment>
