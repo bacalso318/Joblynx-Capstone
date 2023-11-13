@@ -122,13 +122,13 @@ const UserDropdown = props => {
           </Box>
         </Box>
         <Divider sx={{ mt: '0 !important' }} />
-        <MenuItem sx={{ p: 0 }} onClick={() => handleDropdownClose()}>
+        <MenuItem sx={{ p: 0 }} onClick={() => handleDropdownClose('/profile')}>
           <Box sx={styles}>
             <Icon icon='mdi:account-outline' />
             Profile
           </Box>
         </MenuItem>
-        <MenuItem sx={{ p: 0 }} onClick={() => handleDropdownClose('/views/pages/inbox')}>
+        <MenuItem sx={{ p: 0 }} onClick={() => handleDropdownClose('/inbox')}>
           <Box sx={styles}>
             <Icon icon='mdi:email-outline' />
             Inbox
@@ -145,12 +145,6 @@ const UserDropdown = props => {
           <Box sx={styles}>
             <Icon icon='mdi:cog-outline' />
             Settings
-          </Box>
-        </MenuItem>
-        <MenuItem sx={{ p: 0 }} onClick={() => handleDropdownClose()}>
-          <Box sx={styles}>
-            <Icon icon='mdi:currency-usd' />
-            Pricing
           </Box>
         </MenuItem>
         <MenuItem sx={{ p: 0 }} onClick={() => handleDropdownClose()}>
