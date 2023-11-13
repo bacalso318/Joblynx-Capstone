@@ -3,6 +3,7 @@ import Chip from '@mui/material/Chip'
 import TextField from '@mui/material/TextField'
 import Stack from '@mui/material/Stack'
 import Box from '@mui/material/Box'
+import { Divider, Typography } from '@mui/material'
 
 const ChipArrayInput = ({ chips, setChips }) => {
   const [inputValue, setInputValue] = useState('')
@@ -41,13 +42,17 @@ const ChipArrayInput = ({ chips, setChips }) => {
         }}
         sx={{ width: '41.6em' }}
       />
-      <Stack direction='row' spacing={1} mb={1} sx={{ flexWrap: 'wrap' }}>
+
+      {chips.length > 0 && <Typography>Added Skills</Typography>}
+      {chips.length > 0 && <Divider sx={{ my: 1, width: '81.1%' }} />}
+      {chips.length ? null : <Typography>No skills have been added</Typography>}
+      <Stack direction='row' spacing={1} mb={1} sx={{ flexWrap: 'wrap', width: '81%', marginTop: '8px' }}>
         {chips.map(chip => (
           <Chip
             key={chip.label}
             label={chip.label}
             onDelete={() => handleDeleteChip(chip)}
-            style={{ backgroundColor: chip.color, color: 'white' }}
+            style={{ backgroundColor: chip.color, color: 'white', margin: '4px' }}
           />
         ))}
       </Stack>

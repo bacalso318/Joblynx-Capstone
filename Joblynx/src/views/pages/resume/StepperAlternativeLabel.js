@@ -296,12 +296,10 @@ const StepperAlternativeLabel = () => {
                 onChange={e => setEducation(e.target.value)}
               />
             </Grid>
-            <Grid item xs={12} sm={6}>
-              <Grid item xs={12} sm={6}>
-                {/* Pass chips and setChips as props to ChipSelector */}
-                <ChipSelector chips={chips} setChips={setChips} />
-              </Grid>
+            <Grid item xs={1} sm={6}>
+              {/* Pass chips and setChips as props to ChipSelector */}
             </Grid>
+
             <Grid item xs={12} sm={6}>
               <TextField
                 fullWidth
@@ -312,6 +310,10 @@ const StepperAlternativeLabel = () => {
                 value={info}
                 onChange={e => setInfo(e.target.value)}
               />
+            </Grid>
+            <Grid item xs={12} sm={6} sx={{ position: 'fixed', ml: '42.9em', mt: '3.41em' }}>
+              {/* Pass chips and setChips as props to ChipSelector */}
+              <ChipSelector chips={chips} setChips={setChips} />
             </Grid>
           </Fragment>
         )
