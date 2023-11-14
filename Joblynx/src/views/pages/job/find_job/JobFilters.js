@@ -106,7 +106,7 @@ const JobFilters = () => {
                 <Typography variant='h6' fontWeight={'bold'}>
                   Salary
                 </Typography>
-                <Typography>From: ${from_salary}</Typography>
+                <Typography>From: {from_salary > 0 && <span>${from_salary}</span>}</Typography>
                 <Slider
                   value={from_salary}
                   onChange={(_, newValue) => setFrom_Salary(newValue)}
@@ -117,7 +117,7 @@ const JobFilters = () => {
                   step={100}
                   sx={{ width: '13rem' }}
                 />
-                <Typography>To: ${to_salary}</Typography>
+                <Typography>To: {to_salary > 0 && <span>${to_salary}</span>}</Typography>
                 <Slider
                   value={to_salary}
                   onChange={(_, newValue) => setTo_Salary(newValue)}
