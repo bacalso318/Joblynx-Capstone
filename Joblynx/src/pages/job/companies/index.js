@@ -1,70 +1,22 @@
-import React from 'react'
-import { Accordion, AccordionSummary, AccordionDetails, Typography, Container, Grid, Paper } from '@mui/material'
+// ** MUI Imports
+import Card from '@mui/material/Card'
+import Grid from '@mui/material/Grid'
+import Typography from '@mui/material/Typography'
+import CardHeader from '@mui/material/CardHeader'
+import CardContent from '@mui/material/CardContent'
 import CompanyContent from 'src/views/pages/job/companies/CompanyContent'
+import { Container } from '@mui/material'
 
 const Companies = () => {
-  // Sample company data, replace with your actual data
-  const companies = [
-    {
-      id: 1,
-      name: 'Company A',
-      description: 'Description of Company A.',
-      jobPostings: [
-        {
-          id: 101,
-          title: 'Job Title 1',
-          requirements: 'Requirements for Job Title 1',
-          details: 'Details for Job Title 1'
-        }
-        // Add more job postings for Company A
-      ]
-    },
-    {
-      id: 2,
-      name: 'Company B',
-      description: 'Description of Company B.',
-      jobPostings: [
-        {
-          id: 201,
-          title: 'Job Title 2',
-          requirements: 'Requirements for Job Title 2',
-          details: 'Details for Job Title 2'
-        }
-        // Add more job postings for Company B
-      ]
-    }
-    // Add more companies
-  ]
-
   return (
     <Container>
-      <Grid container spacing={3}>
-        <CompanyContent />
-        {companies.map(company => (
-          <Grid item xs={12} key={company.id}>
-            <Accordion>
-              <AccordionSummary aria-controls={`panel-${company.id}-content`} id={`panel-${company.id}-header`}>
-                <Typography variant='h6'>{company.name}</Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Paper elevation={3} style={{ padding: '16px' }}>
-                  <Typography variant='body1'>{company.description}</Typography>
-                  <Typography variant='h6' style={{ marginTop: '16px' }}>
-                    Job Postings
-                  </Typography>
-                  {company.jobPostings.map(jobPosting => (
-                    <div key={jobPosting.id}>
-                      <Typography variant='subtitle1'>{jobPosting.title}</Typography>
-                      <Typography variant='body2'>Requirements: {jobPosting.requirements}</Typography>
-                      <Typography variant='body2'>Details: {jobPosting.details}</Typography>
-                      <hr style={{ margin: '16px 0' }} />
-                    </div>
-                  ))}
-                </Paper>
-              </AccordionDetails>
-            </Accordion>
-          </Grid>
-        ))}
+      <Grid container spacing={6}>
+        <Grid item xs={12} sx={{ pt: theme => `${theme.spacing(8)} !important` }}>
+          <Typography variant='h6'>List of Companies</Typography>
+        </Grid>
+        <Grid item xs={12}>
+          <CompanyContent />
+        </Grid>
       </Grid>
     </Container>
   )

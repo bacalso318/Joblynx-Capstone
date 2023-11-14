@@ -8,8 +8,6 @@ import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
 // ** Demo Components Imports
 
 import StepperAlternativeLabel from 'src/views/pages/resume/StepperAlternativeLabel'
-import ProfileAcc from 'src/views/pages/resume/ProfileAcc'
-import SelectControlledUncontrolled from 'src/views/pages/resume/Gender'
 
 const FormWizard = () => {
   return (
@@ -20,7 +18,6 @@ const FormWizard = () => {
       <Grid item xs={12}>
         <StepperAlternativeLabel />
       </Grid>
-      
     </Grid>
   )
 }
