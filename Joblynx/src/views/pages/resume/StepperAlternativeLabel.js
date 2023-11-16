@@ -13,7 +13,7 @@ import MenuItem from '@mui/material/MenuItem'
 import StepLabel from '@mui/material/StepLabel'
 import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
-import IconButton from '@mui/material/IconButton'
+import { Checkbox } from '@mui/material'
 import InputLabel from '@mui/material/InputLabel'
 import CardContent from '@mui/material/CardContent'
 import OutlinedInput from '@mui/material/OutlinedInput'
@@ -31,6 +31,8 @@ import Icon from 'src/@core/components/icon'
 import StepperCustomDot from './StepperCustomDot'
 import ProfileAcc from './ProfileAcc'
 import ChipSelector from './ChipSelector'
+import LanguageChip from './LanguageChip'
+import YourFormComponent from './EducationStep'
 
 // ** Third Party Imports
 import toast from 'react-hot-toast'
@@ -45,8 +47,11 @@ import SelectControlledUncontrolled from './Gender'
 const CustomInput = forwardRef((props, ref) => {
   return <TextField fullWidth {...props} inputRef={ref} label='Birth Date' autoComplete='off' />
 })
-const StartandEnd = forwardRef((props, ref) => {
-  return <TextField fullWidth {...props} inputRef={ref} label='Start & End Date' autoComplete='off' />
+const StartDate = forwardRef((props, ref) => {
+  return <TextField fullWidth {...props} inputRef={ref} label='Started' autoComplete='off' />
+})
+const EndDate = forwardRef((props, ref) => {
+  return <TextField fullWidth {...props} inputRef={ref} label='Ended' autoComplete='off' />
 })
 const steps = [
   {
@@ -58,8 +63,12 @@ const steps = [
     subtitle: 'Show your relevant experience'
   },
   {
+    title: 'Education',
+    subtitle: 'Show your educational attainment'
+  },
+  {
     title: 'Background',
-    subtitle: 'Show your background experience'
+    subtitle: 'Input your background information'
   },
   {
     title: 'Social Links',
@@ -88,6 +97,11 @@ const StepperAlternativeLabel = () => {
   const [profile, setProfile] = useState('')
   const [chips, setChips] = useState([])
   const [info, setInfo] = useState('')
+  const [company, setCompany] = useState('')
+  const [start, setStart] = useState('')
+  const [end, setEnd] = useState('')
+  const [stillInRole, setStillInRole] = useState(false)
+  const [selectedLanguages, setSelectedLanguages] = useState([])
 
   // Handle Stepper
   const handleBack = () => {
@@ -98,6 +112,13 @@ const StepperAlternativeLabel = () => {
     setActiveStep(prevActiveStep => prevActiveStep + 1)
     if (activeStep === steps.length - 1) {
       toast.success('Form Submitted')
+    }
+  }
+  const handleStillInRoleChange = event => {
+    setStillInRole(event.target.checked)
+    // If "Still in role" is checked, clear the end date
+    if (event.target.checked) {
+      setEnd(null)
     }
   }
 
@@ -121,6 +142,10 @@ const StepperAlternativeLabel = () => {
     setProfile('')
     setChips([])
     setInfo('')
+    setCompany('')
+    setStart('')
+    setEnd('')
+    setStillInRole(false)
   }
 
   const getStepContent = step => {
@@ -253,26 +278,64 @@ const StepperAlternativeLabel = () => {
             <Grid item xs={12} sm={6}>
               <TextField
                 fullWidth
-                type='email'
-                label='Employer'
-                value={email}
-                placeholder='carterleonard@gmail.com'
-                onChange={e => setEmail(e.target.value)}
+                label='Company Name'
+                value={company}
+                placeholder='Company Name'
+                onChange={e => setCompany(e.target.value)}
               />
             </Grid>
 
             <Grid item xs={12} sm={2}>
               <DatePicker
-                selected={date}
+                selected={start}
                 showYearDropdown
                 showMonthDropdown
                 id='form-layouts-tabs-date'
                 placeholderText='MM-DD-YYYY'
-                customInput={<StartandEnd />}
-                onChange={date => setDate(date)}
+                customInput={<StartDate />}
+                onChange={date => setStart(date)}
               />
             </Grid>
 
+            {/* Conditionally render the "End Date" form based on the checkbox status */}
+            {!stillInRole && (
+              <Grid item xs={12} sm={2}>
+                <DatePicker
+                  selected={end}
+                  showYearDropdown
+                  showMonthDropdown
+                  id='form-layouts-tabs-date'
+                  placeholderText='MM-DD-YYYY'
+                  customInput={<EndDate />}
+                  onChange={date => setEnd(date)}
+                />
+              </Grid>
+            )}
+            {/* Disable the "End Date" form when the checkbox is checked */}
+            {stillInRole && (
+              <Grid item xs={12} sm={2}>
+                <DatePicker
+                  selected={end}
+                  showYearDropdown
+                  showMonthDropdown
+                  id='form-layouts-tabs-date'
+                  placeholderText='MM-DD-YYYY'
+                  customInput={<EndDate />}
+                  onChange={date => setEnd(date)}
+                  disabled // Add the disabled attribute
+                />
+              </Grid>
+            )}
+            <Grid item xs={12} sm={2}>
+              <FormControlLabel
+                value={stillInRole}
+                control={<Checkbox checked={stillInRole} onChange={handleStillInRoleChange} />}
+                label='Still in role'
+                labelPlacement='end'
+                onChange={e => setStillInRole(e.target.value)}
+                sx={{ mt: '0.5em' }}
+              />
+            </Grid>
             <Grid item xs={12} sm={6}>
               <TextField
                 fullWidth
@@ -287,15 +350,16 @@ const StepperAlternativeLabel = () => {
       case 2:
         return (
           <Fragment key={step}>
+            <YourFormComponent />
+          </Fragment>
+        )
+      case 3:
+        return (
+          <Fragment key={step}>
             <Grid item xs={12} sm={6}>
-              <TextField
-                fullWidth
-                label='Education'
-                placeholder=''
-                value={education}
-                onChange={e => setEducation(e.target.value)}
-              />
+              <LanguageChip selectedLanguages={selectedLanguages} setSelectedLanguages={setSelectedLanguages} />
             </Grid>
+
             <Grid item xs={1} sm={6}>
               {/* Pass chips and setChips as props to ChipSelector */}
             </Grid>
@@ -317,7 +381,7 @@ const StepperAlternativeLabel = () => {
             </Grid>
           </Fragment>
         )
-      case 3:
+      case 4:
         return (
           <Fragment key={step}>
             <Grid item xs={12} sm={6}>
