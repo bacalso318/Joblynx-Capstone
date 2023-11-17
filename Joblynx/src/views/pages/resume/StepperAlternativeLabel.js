@@ -32,7 +32,7 @@ import StepperCustomDot from './StepperCustomDot'
 import ProfileAcc from './ProfileAcc'
 import ChipSelector from './ChipSelector'
 import LanguageChip from './LanguageChip'
-import YourFormComponent from './EducationStep'
+import EducationForm from './EducationStep'
 
 // ** Third Party Imports
 import toast from 'react-hot-toast'
@@ -93,7 +93,6 @@ const StepperAlternativeLabel = () => {
   const [firstName, setFirstName] = useState('')
   const [activeStep, setActiveStep] = useState(0)
   const [nationality, setNationality] = useState('')
-  const [education, setEducation] = useState('')
   const [profile, setProfile] = useState('')
   const [chips, setChips] = useState([])
   const [info, setInfo] = useState('')
@@ -102,6 +101,14 @@ const StepperAlternativeLabel = () => {
   const [end, setEnd] = useState('')
   const [stillInRole, setStillInRole] = useState(false)
   const [selectedLanguages, setSelectedLanguages] = useState([])
+  const [educationData, setEducationData] = useState({
+    institute: '',
+    course: '',
+    completed: '',
+    startD: '',
+    endYear: '',
+    completionYear: ''
+  })
 
   // Handle Stepper
   const handleBack = () => {
@@ -350,7 +357,7 @@ const StepperAlternativeLabel = () => {
       case 2:
         return (
           <Fragment key={step}>
-            <YourFormComponent />
+            <EducationForm educationData={educationData} setEducationData={setEducationData} />
           </Fragment>
         )
       case 3:
